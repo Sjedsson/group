@@ -15,7 +15,7 @@ const [allCoffes, setAllCoffes] = useState([]);
   }
 
   const menyComponent = allCoffes.map((item) => {
-    return <Coffe coffe={item} key={object.id} title= { item.title} desc= { item.desc} price= {item.price} />;
+    return <Coffe coffe={item} key={item.id} title= { item.title} desc= { item.desc} price= {item.price} />;
   });
  
 
