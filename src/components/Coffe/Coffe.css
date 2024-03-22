@@ -1,0 +1,34 @@
+.coffe-card{
+    width: 44rem;
+    height: 8rem;
+    border: 1px solid #dcdcdc;
+    box-shadow: 0 3px 12px #cbc1c1;
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    border-radius: 16px;
+
+
+    .coffe-title{
+        margin: 0.5rem;
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 40px;
+        font-family: PT serif;
+      
+    }
+
+    .coffe-desc{
+        font-size: 12px;
+        font-family:sans-serif;
+        line-height: 15.6px;
+        
+
+    }
+
+    .coffe-price{
+     font-size: 23px;
+     font-weight: 700;
+     line-height: 27px;
+    }
+}
