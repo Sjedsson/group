@@ -1,32 +1,40 @@
 import { useState, useEffect } from "react";
 
-import "./Meny.css"
+import "./Meny.css";
 import Coffe from "../Coffe/Coffe";
 
-export default function AllBeans() {
-const [allCoffes, setAllCoffes] = useState([]);
-  async function fetchAllBeans() {
-    const response = await fetch(
-      "https://airbean-api-xjlcn.ondigitalocean.app/api/beans/"
+export default function Meny() {
+  const [menu, setMenu] = useState([]);
+
+  useEffect(() => {
+    async function fetchAllBeans() {
+      const response = await fetch(
+        "https://airbean-api-xjlcn.ondigitalocean.app/api/beans/"
+      );
+      const data = await response.json();
+      console.log(data.menu);
+      setMenu(data.menu);
+    }
+
+    fetchAllBeans();
+  }, []);
+
+  const menyComponent = menu.map((item, i) => {
+    return (
+      <Coffe
+        key={i}
+        title={item.title}
+        desc={item.desc}
+        price={item.price}
+      />
     );
-    const data = await response.json();
-   
-    console.log(data.menu);
-  }
-
-  const menyComponent = allCoffes.map((item) => {
-    return <Coffe coffe={item} key={item.id} title= { item.title} desc= { item.desc} price= {item.price} />;
   });
- 
 
-  fetchAllBeans();
+  return (
+    <section className="meny-container">
+      <img className="header-img" src="./public/header.png" alt="header-img" />
 
-  return(
-    <section className="meny-section">
-     {menyComponent}
+      <div className="meny">{menyComponent}</div>
     </section>
-   
-
-
-  )
+  );
 }
