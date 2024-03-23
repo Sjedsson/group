@@ -1,0 +1,60 @@
+.header-container {
+  position: relative;
+  border: none;
+}
+
+.img-container {
+  height: 12rem;
+  margin-top: 20px;
+}
+
+.header-title {
+  font-size: 80px;
+  font-weight: 700;
+  color: #2f2926;
+  font-family: serif;
+  
+}
+
+
+
+.header-img {
+  width: 100%;
+  background-image: url("./public/graphics-header.svg");
+  background-size: cover;
+  height: 13rem;
+  position: relative;
+  border: none;
+}
+
+.nav-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 20px;
+  left: 16px;
+  background-color: whitesmoke;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+}
+
+.navicon {
+  width: 30px;
+}
+
+.cart-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 20px;
+  right: 16px;
+  background-color: #2f2926;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+}
+
+.carticon {
+  width: 30px;
+}

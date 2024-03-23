@@ -1,13 +1,16 @@
-import { useState } from 'react'
+
 import Meny from "./components/Meny/Meny"
 import './App.css'
+import Header from './components/Header/Header'
+
 
 
 function App() {
-  const [count, setCount] = useState(0)
+ 
 
   return (
     <>
+    <Header/>
     <Meny/>
     </>
   )
