@@ -11,16 +11,10 @@
     flex-wrap: wrap;
     justify-content:center;
     flex-direction: column;
-    box-shadow: 0 3px 12px #bdabab;
+    
 }
 
 .increment-icon {
     font-size: 50px;
 }
 
-.header-img {
-    width: 100%;
-    background-color: #F3E4E1;
-    box-shadow: 0 3px 12px #bdabab;
-    height: 13rem;
-}

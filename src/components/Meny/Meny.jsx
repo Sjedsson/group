@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 import "./Meny.css";
 import Coffe from "../Coffe/Coffe";
+import Footer from "../Footer/Footer";
 
 export default function Meny() {
   const [menu, setMenu] = useState([]);
@@ -32,9 +33,10 @@ export default function Meny() {
 
   return (
     <section className="meny-container">
-      <img className="header-img" src="./public/header.png" alt="header-img" />
+      
 
       <div className="meny">{menyComponent}</div>
+      <Footer/>
     </section>
   );
 }

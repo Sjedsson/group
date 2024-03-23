@@ -1,0 +1,12 @@
+.footer-container {
+   margin-top: 3rem;
+   
+    
+}
+
+.footer-img {
+    width: 100%;
+    background-image: url("./public/graphics-footer.svg");
+    background-size: cover;
+  
+}
