@@ -33,8 +33,7 @@ function App() {
       description={item.desc} 
       price={item.price} 
       key={item.id}
-      setAmount={setAmount}
-      amount={amount}
+      setAmount={setAmount} 
     />
   ));
 
@@ -75,6 +74,7 @@ function App() {
         ) : orderSuccess ? (
           <div>
             <p>Order placed successfully! Order number: {orderSuccess.orderNr}</p>
+            {/* Check if order details exist before rendering */}
             {orderSuccess.details && orderSuccess.details.order ? (
               <ul>
                 {orderSuccess.details.order.map((item, index) => (
