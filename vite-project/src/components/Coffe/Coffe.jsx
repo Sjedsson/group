@@ -1,12 +1,18 @@
-import { IoAddCircle } from "react-icons/io5";
-export default function Coffe({coffe}){
-    return(
+function Coffe(props) {
+    console.log(props);
+    function handleClick() {
+        props.setAmount(props.amount + 1);
+    }
+
+    return (
         <article>
-            <IoAddCircle className="increment-icon"/>
-            <h2>{coffe.title}</h2>
-            <p>{coffe.desc}</p>
-            <p>{coffe.price}</p>
-            
+            <h2>{ props.title }</h2>
+            <p>{ props.desc }</p>
+            <p>{ props.price } kr</p>
+            <p>{ props.id }</p>
+            <button onClick={ handleClick }>Add to cart</button>
         </article>
     )
 }
+
+export default Coffe;

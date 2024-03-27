@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 
-import "./Meny.css"
 import Coffe from "../Coffe/Coffe";
 
 export default function AllBeans() {
