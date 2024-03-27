@@ -1,11 +1,13 @@
-import Cart from "../Cart/Cart";
+import React from 'react';
 
-function Header(props) {
-    return (
-        <header>
-            <Cart amount={ props.amount } />
-        </header>
-    )
+function Header( { amount, placeOrder,}) {
+  return (
+    <header>
+      <nav>
+        <a href="#" onClick={placeOrder}>Cart ({amount})</a>
+      </nav>
+    </header>
+  );
 }
 
 export default Header;

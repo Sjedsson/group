@@ -3,6 +3,7 @@ function Cart(props) {
         <section>
             <a href="#">Cart</a>
             <p>{ props.amount }</p>
+            
         </section>
     )
 }

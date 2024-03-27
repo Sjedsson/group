@@ -6,6 +6,7 @@ function App() {
   const [menu, setMenu] = useState([]);
   const [amount, setAmount] = useState(0);
   const [error, setError] = useState(null);
+  const [orderSuccess, setOrderSuccess] = useState(null);
 
   useEffect(() => {
     async function fetchMenu() {
@@ -37,12 +38,53 @@ function App() {
     />
   ));
 
+  const placeOrder = async () => {
+    try {
+      const response = await fetch('https://airbean-9pcyw.ondigitalocean.app/api/beans/order', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          details: {
+            order: menu.map(item => ({
+              name: item.title,
+              price: item.price
+            }))
+          }
+        })
+      });
+      if (!response.ok) {
+        throw new Error('Failed to place order');
+      }
+      const data = await response.json();
+      console.log('Order placed:', data);
+      setOrderSuccess(data);
+    } catch (error) {
+      console.error('Error placing order:', error);
+      setError(error.message);
+    }
+  };
+
   return (
     <main>
-      <Header amount={amount} />
+      <Header amount={amount} placeOrder={placeOrder} />
       <section>
         {error ? (
           <p>Error: {error}</p>
+        ) : orderSuccess ? (
+          <div>
+            <p>Order placed successfully! Order number: {orderSuccess.orderNr}</p>
+            {orderSuccess.details && orderSuccess.details.order ? (
+              <ul>
+                {orderSuccess.details.order.map((item, index) => (
+                  <li key={index}>
+                    {item.name} - ${item.price}
+                  </li>
+                ))}
+              </ul>
+            ) : <p>No order details available</p>}
+          </div>
         ) : (
           coffeeComponents.length > 0 ? coffeeComponents : <p>No products available</p>
         )}
